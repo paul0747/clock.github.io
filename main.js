@@ -3,9 +3,8 @@ let getCurrentTime = () => {
   let getHour = date.getHours();
   let getMinutes = date.getMinutes();
   let getSeconds = date.getSeconds();
-  let session = "am";
-
-  if (getHour === 0) {
+  let session = "AM";
+  if (getHour == 0) {
     getHour = 12;
   }
   if (getHour > 12) {
@@ -13,27 +12,14 @@ let getCurrentTime = () => {
     session = "PM";
   }
   if (getHour < 10) {
-    let getHour = `0${getHour}`;
-    // let time = `0${getHour}:${getMinutes}:${getSeconds} ${session}`;
-    // return time;
-    return h;
+    getHour = `0${getHour}`;
   }
   if (getMinutes < 10) {
-    let getMinutes = `0${getMinutes}`;
-    // let time = `${getHour}:0${getMinutes}:${getSeconds} ${session}`;
-    // return time;
-    return m;
+    getMinutes = `0${getMinutes}`;
   }
   if (getSeconds < 10) {
-    let getSeconds = `0${getSeconds}`;
-    // let time = `${getHour}:${getMinutes}:0${getSeconds} ${session}`;
-    // return time;
-    return s;
+    getSeconds = `0${getSeconds}`;
   }
-  //   else {
-  //     let time = `${getHour}:${getMinutes}:${getSeconds} ${session}`;
-  //     return time;
-  //   }
 
   let time = `${getHour}:${getMinutes}:${getSeconds} ${session}`;
   document.getElementById("clockdisplay").innerText = time;
